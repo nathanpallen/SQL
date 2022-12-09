@@ -1,0 +1,40 @@
+--Create a grocery store database
+
+CREATE TABLE store (
+    id INTEGER,
+    name TEXT,
+    quantity INTEGER,
+    price INTEGER,
+    category TEXT
+    );
+    
+INSERT INTO store (id, name, quantity, price, category)
+
+VALUES (1, 'Apple', 10, 1.99, 'Fruit'),
+       (2, 'Orange', 15, 2.49, 'Fruit'),
+       (3, 'Banana', 20, 0.99, 'Fruit'),
+       (4, 'Tomato', 5, 1.29, 'Vegetable'),
+       (5, 'Carrot', 7, 0.89, 'Vegetable'),
+       (6, 'Broccoli', 3, 1.59, 'Vegetable'),
+       (7, 'Chicken', 10, 5.99, 'Meat'),
+       (8, 'Beef', 5, 8.99, 'Meat'),
+       (9, 'Pork', 7, 6.99, 'Meat'),
+       (10, 'Salmon', 8, 9.99, 'Seafood'),
+       (11, 'Shrimp', 12, 12.99, 'Seafood'),
+       (12, 'Crab', 6, 14.99, 'Seafood'),
+       (13, 'Soda', 20, 1.49, 'Beverage'),
+       (14, 'Water', 25, 1.19, 'Beverage'),
+       (15, 'Coffee', 15, 2.99, 'Beverage');
+     
+--Display the database ordered by price.
+
+SELECT *
+FROM store
+ORDER BY price DESC;
+
+--What are the most 5 stocked items? 
+
+SELECT name, price, quantity
+FROM store
+order by quantity desc
+limit 5; 
